@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toast
 import com.etna.mob4.utils.FirebaseInstanceSingleton
 
@@ -16,7 +15,7 @@ import com.etna.mob4.utils.FirebaseInstanceSingleton
 class RegisterActivity :  AppCompatActivity() {
     private val TAG: String = "CreateAccount"
 
-    private val fInstance = FirebaseInstanceSingleton.getInstance()
+    private val fAuthInstance = FirebaseInstanceSingleton.getAuthInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,13 +34,13 @@ class RegisterActivity :  AppCompatActivity() {
             return
         }
 
-        fInstance.createUserWithEmailAndPassword(login.text.toString(), pswd.text.toString())
+        fAuthInstance.createUserWithEmailAndPassword(login.text.toString(), pswd.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Toast.makeText(this, "Account created.", Toast.LENGTH_SHORT).show()
                         Log.d(TAG, "createUserWithEmail:success")
-                        fInstance.currentUser
+                        fAuthInstance.currentUser
                         setResult(RESULT_OK)
                         finish()
                     } else {
