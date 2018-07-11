@@ -6,76 +6,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+        android:layout_width="179dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="33dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginStart="148dp"
+        android:onClick="connect"
+        android:text="Connect !"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
-        android:id="@+id/user_login"
+        android:id="@+id/user_email"
+        style="@android:style/Widget.Material.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="85dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="114dp"
         android:ems="10"
-        android:inputType="none"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="77dp"
+        android:text="email"
+        app:layout_constraintBottom_toTopOf="@+id/user_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/user_pswd"
+        style="@android:style/Widget.Material.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="106dp"
         android:layout_marginEnd="85dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="118dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_login" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="178dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="116dp"
-        android:onClick="createAccount"
-        android:text="Create account"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_pswd"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/user_email" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="62dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="242dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="74dp"
-        android:text="Login"
-        app:layout_constraintBottom_toTopOf="@+id/user_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
-
-    <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/label_pswd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="242dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="86dp"
         android:text="Password"
         app:layout_constraintBottom_toTopOf="@+id/user_pswd"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_login" />
+        app:layout_constraintTop_toBottomOf="@+id/user_email" />
+
 </android.support.constraint.ConstraintLayout>
