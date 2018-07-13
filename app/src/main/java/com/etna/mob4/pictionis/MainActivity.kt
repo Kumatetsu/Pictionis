@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
  */
 class MainActivity : AppCompatActivity() {
     val REGISTER_ACCOUNT: Int = 1
+    val mauth: FirebaseAuth = FirebaseInstanceSingleton.getAuthInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +31,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToGame(view: View) {
-        val mauth: FirebaseAuth = FirebaseInstanceSingleton.getAuthInstance()
-        Log.d("USER", mauth.currentUser!!.email.toString())
         val intent = Intent(this, GameActivity::class.java)
         startActivity(intent)
     }
