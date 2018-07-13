@@ -6,55 +6,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="326dp"
-        android:layout_height="316dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginStart="35dp"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/messageList"
+        android:layout_width="match_parent"
+        android:layout_height="426dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"
-        android:text="This is the game view"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="vertical"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="283dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </android.support.v7.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/label_message"
-        android:layout_width="wrap_content"
+    <View
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_messageArea"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layout_messageArea"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="312dp"
-        android:layout_marginStart="16dp"
-        android:text="Message"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button4"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="68dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginStart="10dp"
-        android:onClick="sendMessage"
-        android:text="send"
+        android:orientation="horizontal"
+        android:minHeight="48dp"
+        android:background="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <EditText
+            android:id="@+id/txtMessage"
+            android:hint="Enter message"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:maxLines="6"/>
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="sendMessage"
+            android:text="SEND"
+            android:textSize="14dp" />
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

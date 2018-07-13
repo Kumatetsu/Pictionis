@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToGame(view: View) {
-        val mauth: FirebaseAuth = FirebaseInstanceSingleton.getInstance()
+        val mauth: FirebaseAuth = FirebaseInstanceSingleton.getAuthInstance()
         Log.d("USER", mauth.currentUser!!.email.toString())
-//        val intent = Intent(this, GameActivity::class.java)
-//        startActivity(intent)
+        val intent = Intent(this, GameActivity::class.java)
+        startActivity(intent)
     }
 
     fun goToConnectUser(view: View) {

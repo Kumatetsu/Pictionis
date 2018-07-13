@@ -21,7 +21,7 @@ import com.etna.mob4.utils.FirebaseInstanceSingleton
  * Created by kumatetsu on 10/07/2018.
  */
 class SignInActivity :  AppCompatActivity()  {
-    private val mAuth: FirebaseAuth = FirebaseInstanceSingleton.getInstance()
+    private val mAuth: FirebaseAuth = FirebaseInstanceSingleton.getAuthInstance()
     private val TAG: String = "SignInAccount"
 
     override fun onCreate(savedInstanceState: Bundle?) {
