@@ -35,6 +35,9 @@ class GameActivity  : AppCompatActivity() {
         adapter = MessageAdapter(this)
         messageList.adapter = adapter
 
+        /**
+         * Listener on reference `chatref`
+         */
         chatRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
@@ -44,6 +47,7 @@ class GameActivity  : AppCompatActivity() {
                 Log.d(MESSAGE_TAG, "Value is: " + value)
 
                 if (value != null)
+                    //Update the view with message
                     runOnUiThread {
                         adapter.addMessage(value!!)
                         messageList.scrollToPosition(adapter.itemCount - 1);
@@ -57,6 +61,9 @@ class GameActivity  : AppCompatActivity() {
         })
     }
 
+    /**
+     * send message to firebase.
+     */
     fun sendMessage(view: View) {
         if(txtMessage.text.isNotEmpty()) {
             val message = Message(
