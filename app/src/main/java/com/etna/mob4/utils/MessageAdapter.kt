@@ -18,8 +18,10 @@ private const val VIEW_TYPE_MY_MESSAGE = 1
 private const val VIEW_TYPE_OTHER_MESSAGE = 2
 
 class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHolder>() {
+    //Container des messages reçu/envoyés
     private val messages: ArrayList<Message> = ArrayList()
     private val mauth = FirebaseInstanceSingleton.getAuthInstance()
+
 
     fun addMessage(message: Message){
         messages.add(message)
@@ -30,6 +32,7 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
         return messages.size
     }
 
+    //Connaitre quelle view on veut afficher et switcher entre les views
     override fun getItemViewType(position: Int): Int {
         val message = messages.get(position)
 

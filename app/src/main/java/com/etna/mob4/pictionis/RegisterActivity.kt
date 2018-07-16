@@ -22,6 +22,10 @@ class RegisterActivity :  AppCompatActivity() {
         setContentView(R.layout.register_layout)
     }
 
+    /**
+     * Use Firebase auth function to create an account
+     * Return ok if creation is ok
+     */
     fun createAccount(view: View) {
         val login = findViewById<EditText>(R.id.user_email)
         val pswd  = findViewById<EditText>(R.id.user_pswd)

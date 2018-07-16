@@ -13,36 +13,44 @@ import com.google.firebase.auth.FirebaseAuth
  * Created by kumatetsu on 09/07/2018.
  */
 class MainActivity : AppCompatActivity() {
-    val REGISTER_ACCOUNT: Int = 1
+    val SIGNIN: Int = 1;
+    val mauth: FirebaseAuth = FirebaseInstanceSingleton.getAuthInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_layout)
-
+        if (mauth.currentUser == null)
+            startActivityForResult(Intent(this, SignInActivity::class.java), SIGNIN)
     }
 
+    /**
+     * waiting for connection
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode.equals(REGISTER_ACCOUNT)) {
+        if (requestCode.equals(SIGNIN)) {
             if (resultCode.equals(RESULT_OK)) {
                 Toast.makeText(this, "Menu after account created", Toast.LENGTH_SHORT).show()
+            } else {
+                startActivityForResult(Intent(this, SignInActivity::class.java), SIGNIN)
             }
         }
     }
 
+    /**
+     * launch game activity
+     */
     fun goToGame(view: View) {
-        val mauth: FirebaseAuth = FirebaseInstanceSingleton.getAuthInstance()
-        Log.d("USER", mauth.currentUser!!.email.toString())
         val intent = Intent(this, GameActivity::class.java)
         startActivity(intent)
     }
 
-    fun goToConnectUser(view: View) {
-        val intent = Intent(this, SignInActivity::class.java)
-        startActivity(intent)
+    /**
+     * disconnect and reload activity
+     */
+    fun disconnect(view: View) {
+        FirebaseAuth.getInstance().signOut()
+        finish()
+        startActivity(getIntent())
     }
 
-    fun goToCreateUser(view: View) {
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivityForResult(intent, REGISTER_ACCOUNT)
-    }
 }
