@@ -9,13 +9,14 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messageList"
         android:layout_width="match_parent"
-        android:layout_height="426dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:scrollbars="vertical"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </android.support.v7.widget.RecyclerView>
@@ -28,6 +29,15 @@
         app:layout_constraintBottom_toTopOf="@+id/layout_messageArea"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.etna.mob4.pictionis.PlaygroundView
+        android:id="@+id/draw_view"
+        android:layout_width="375dp"
+        android:layout_height="280dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/layout_messageArea"
@@ -64,4 +74,20 @@
             android:textSize="14dp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="232dp"
+        android:layout_height="25dp"
+        android:background="@color/colorPrimary"
+        android:text="reset"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="108dp"
+        tools:text="Reset" />
 </android.support.constraint.ConstraintLayout>
