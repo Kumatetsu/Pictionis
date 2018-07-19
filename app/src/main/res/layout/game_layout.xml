@@ -8,34 +8,37 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messageList"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="361dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="324dp"
         android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
     </android.support.v7.widget.RecyclerView>
 
     <View
+        android:id="@+id/view2"
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="@color/colorPrimaryDark"
-        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_messageArea"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
     <com.etna.mob4.pictionis.PlaygroundView
         android:id="@+id/draw_view"
         android:layout_width="375dp"
-        android:layout_height="280dp"
+        android:layout_height="309dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,8 +80,12 @@
 
     <Button
         android:id="@+id/resetButton"
-        android:layout_width="232dp"
-        android:layout_height="25dp"
+        android:layout_width="338dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
         android:text="reset"
         android:textAlignment="center"
@@ -87,7 +94,18 @@
         android:textColor="@android:color/background_light"
         android:textSize="12sp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="108dp"
+        app:layout_constraintBottom_toTopOf="@+id/draw_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="Reset" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="352dp"
+        android:layout_height="4dp"
+        android:background="?android:attr/listDivider"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="362dp" />
 </android.support.constraint.ConstraintLayout>
