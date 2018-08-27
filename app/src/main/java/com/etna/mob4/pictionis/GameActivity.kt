@@ -102,6 +102,7 @@ class GameActivity  : AppCompatActivity() {
             )
             chatRef.setValue(message)
         }
+        txtMessage.text.clear()
     }
 
 }
